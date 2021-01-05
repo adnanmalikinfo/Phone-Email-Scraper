@@ -26,13 +26,17 @@ emailRegex = re.compile(r'''
 
  ''',  re.VERBOSE)
  
-result = pyperclip.paste()
-extractedPhoneNumbers = phoneRegex.findall(result)
-extractedEmails = emailRegex.findall(result)
+dataCopied = pyperclip.paste()
+extractedPhoneNumbers = phoneRegex.findall(dataCopied)
+extractedEmails = emailRegex.findall(dataCopied)
 
-print(extractedPhoneNumbers)
-print(extractedEmails)
+allPhoneNumbers = []
+for phoneNumbers in extractedPhoneNumbers:
+    allPhoneNumbers.append(phoneNumbers[0])
 
+clearFormat = '\n'.join(allPhoneNumbers) + '\n' + '\n'.join(extractedEmails)
+pyperclip.copy(clearFormat)
+print(clearFormat)
 
 
 
