@@ -11,8 +11,8 @@ import pyperclip
 
 phoneRegex = re.compile(r'''
  (
- 0|\+92              #Country Code
- \d\d\d              #Network Code
+ (0|\+92) ?            #Country Code
+ (\d\d\d | \d\d\d-)            #Network Code
  \d\d\d\d\d\d\d 
  )   #Contact Number
  ''', re.VERBOSE)
