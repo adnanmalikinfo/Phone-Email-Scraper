@@ -20,9 +20,9 @@ phoneRegex = re.compile(r'''
 #Create Regex for Email addresses
 
 emailRegex = re.compile(r'''
- [a-zA-Z0-9_.+] +   #namepart
+ [a-zA-Z0-9_.+-] +   #namepart
  @                  #@ symbol
- [a-zA-Z0-9_.+] +    #domain name part
+ [a-zA-Z0-9_.+-] +    #domain name part
 
  ''',  re.VERBOSE)
  
